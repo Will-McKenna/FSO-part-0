@@ -1,0 +1,23 @@
+This is my submission for Part 0 - Exercise O.4
+
+Task: Create a similar diagram depicting the situation where the user creates a new note on the page https://studies.cs.helsinki.fi/exampleapp/notes
+by writing something into the text field and clicking the submit button.
+
+```mermaid
+
+  participant browser
+  participant server
+  
+  browser->>server: POST https://fullstack.exampleapp.herokuapp.com/new-note
+  activate server
+  server-->>browser: Ask browser for a new GET request to the 'notes' address
+  deactivate server
+
+  browser->>server: GET https://fullstack.exampleapp.herokuapp.com/notes
+  activate server
+  server-->>browser: HTML document
+  deactivate server
+
+  
+
+```
